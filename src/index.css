@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.App{
+
+
+  background-color: bisque;
+  display: flex;
+  align-items: center;
+
+}
+.red{
+ font-size: 20px;
+ background-color: aqua;
+}
