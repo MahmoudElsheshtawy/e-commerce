@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 
-const Test = () => {
-//   const number = [10 ,20 ,30]
-// const newnumber=number.map((el)=>el*2)
-// console.log(newnumber)
+const Test = ({testnames}) => {
+    const [test ,setTest]= useState("")
+
+  const testhandler =(e)=>{
+    const names = e.target.value
+    setTest(names)
+    testnames(names)
+
+    // if (name.length ===  10) {
+    //   return alert("aha")
+      
+    // }
+  }
   return (
     <div>
-{/* ttt */}
 
+    <input type="text" 
+    placeholder="enter your email" 
+    onChange={testhandler}
+    value={test}
+    />
+    <button >click me</button>
 
     </div>
   )

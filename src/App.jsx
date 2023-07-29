@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, } from "react";
 import Card from "./component/card/Card";
 import Test from "./component/test/Test";
 
 const App = () => {
-
+  // const inputEl =useRef(null)
+const [dleter ,setdleter]=useState(true);
+// data
 const [state ,setState]=useState
 (
   [
@@ -26,24 +28,62 @@ const [state ,setState]=useState
     tall:180,},]
  )
 
-//array boys
-const handledelete =(e,cler)=>{
-  const deleteer = state.filter((e ,idx)=>idx !== cler)
-  setState(deleteer)
-  console.log(deleteer)
-// console.log(e.target,idx)
+// x
+
+
+const handledelete=(idx,clre)=>{
+       const deletett=state.filter((e,idx)=>idx !== clre);
+       setState(deletett)
+
+
+console.log(deletett)
 
 }
-// console.log(handledelete)
+
+///////////////////\\\\//////////////////////////////////
+
+// const change =()=>{
+  // eslint-disable-next-line no-lone-blocks
+  
+  // console.log(inputEl.current.value)
+// }
+
+// const click =()=>{
+
+//   inputEl.current.focus();
+
+// }
 
 
+const testnames = (names)=>{
+
+  console.log(names)
+}
+
+
+
+
+
+
+
+
+
+    
   return (
     <div className='App'> 
        <div className="container">
-        <h1>boys data</h1>
-       <Card listname={state} type="men" handledelete={handledelete}/>
-      
-       <Test/>
+       <Test testnames={testnames}/>
+        <h1>
+         my: 
+        </h1>
+        <button onClick={()=>setdleter(!dleter)}>
+          {dleter ?"hideName" :"showNmae"}
+        </button>
+        {/* <button onClick={()=>setdleter(!dleter)}>{ dleter ? "hide-name" : "show-name"}</button> */}
+        <div className={ dleter ? "show" :"hide"}>
+        <Card listname={state} type="men" handledelete={handledelete}/>
+        </div>
+       
        </div>
      
     </div>

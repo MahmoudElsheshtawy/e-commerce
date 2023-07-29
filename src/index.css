@@ -57,3 +57,9 @@ code {
   border: none;
 
 }
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
