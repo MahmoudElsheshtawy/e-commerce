@@ -1,6 +1,7 @@
 import { useState, } from "react";
 import Card from "./component/card/Card";
 import Test from "./component/test/Test";
+import Forme from "./component/form/Forme";
 
 const App = () => {
   // const inputEl =useRef(null)
@@ -10,29 +11,47 @@ const [state ,setState]=useState
 (
   [
   {
+    id:1,
     name:"mahmoud",
     age:20,
     favoritColor:"red",
     tall:180,
+    type:"men"
   },
   {
+    id:2,
+    name:"mariam",
+    age:20,
+    favoritColor:"red",
+    tall:180,
+    type:"girl"
+  },
+  {
+    id:3,
     name:"osman",
     age:30,
     favoritColor:"red",
     tall:180,
+    type:"men"
   },
+
   {
-    name:"ali",
-    age:50,
-    favoritColor:"red",
-    tall:180,},]
+    id:4,
+    name:"madeha",
+    age:20,
+    favoritColor:"green",
+    tall:180,
+  type:"girl"
+},
+
+]
  )
 
 // x
 
 
-const handledelete=(idx,clre)=>{
-       const deletett=state.filter((e,idx)=>idx !== clre);
+const handledelete=(e,indexid)=>{
+       const deletett=state.filter((e )=>e.id !== indexid);
        setState(deletett)
 
 
@@ -53,22 +72,20 @@ console.log(deletett)
 //   inputEl.current.focus();
 
 // }
+const [filter ,setFilter]= useState("")
 
 
 const testnames = (names)=>{
-
   console.log(names)
+return setFilter(names)
+ 
+}
+
+const nameshandler=()=>{
+  return state.filter((el)=>el.name.includes(filter))
 }
 
 
-
-
-
-
-
-
-
-    
   return (
     <div className='App'> 
        <div className="container">
@@ -81,10 +98,11 @@ const testnames = (names)=>{
         </button>
         {/* <button onClick={()=>setdleter(!dleter)}>{ dleter ? "hide-name" : "show-name"}</button> */}
         <div className={ dleter ? "show" :"hide"}>
-        <Card listname={state} type="men" handledelete={handledelete}/>
+        <Card listname={nameshandler()} handledelete={handledelete}/>
         </div>
-       
+        <Forme/>
        </div>
+       
      
     </div>
   );
