@@ -1,0 +1,37 @@
+
+ .Control {
+  width: 100%;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  margin-top: 10px;
+}
+.Control label {
+  font-weight: bold;
+  color: #212529; 
+  margin-left: 5px;
+  font-size: 17px;
+  cursor: pointer;
+}
+.Control input{
+    width: 99%;
+    padding: 7px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    color: #495057;
+    font-size: 15px;
+    margin: auto;
+}
+
+.button{
+  background-color: #4caf50; 
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+} 
